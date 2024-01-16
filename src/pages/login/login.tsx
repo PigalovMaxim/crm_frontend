@@ -4,6 +4,7 @@ import Input from "@/shared/input";
 import Button from "@/shared/button";
 import login from "./api/login";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,13 +14,18 @@ export default function Login() {
 
   const onSubmit = async (data: FormValues) => {
     setIsLoading(true);
-    const result = await login(data);
+    const errorText = await login(data);
     setIsLoading(false);
-    if (!result) return;
+    if (errorText) {
+      toast.error(errorText);
+      return;
+    }
+    toast.success("Успешно авторизовались");
   };
 
   return (
     <div className="w-full h-full bg-bg flex justify-center items-center">
+      <ToastContainer position="bottom-right" />
       <form
         onSubmit={handleSubmit(onSubmit, (data) => console.log("fail", data))}
         className="w-1/2 h-1/2 bg-block rounded-lg border border-white flex flex-col justify-center px-20 gap-y-4 max-w-xl"
