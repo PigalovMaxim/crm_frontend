@@ -17,10 +17,11 @@ function Input(p: Props, _: ForwardedRef<HTMLInputElement>) {
       )}
       <input
         className={classNames(
-          "w-full h-10 bg-transparent border border-white rounded-lg text-white px-4 outline-none",
+          "w-full h-10 bg-transparent border rounded-lg text-white px-4 outline-none",
           customStyles,
           {
-            'border-c-red': error
+            'border-c-red': error,
+            'border-white': !error,
           }
         )}
         {...inputProps}

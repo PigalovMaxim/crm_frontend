@@ -5,9 +5,12 @@ import Button from "@/shared/button";
 import login from "./api/login";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { routes } from "@/app/router";
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
+  const navigation = useNavigate();
   const { control, handleSubmit, formState } = useForm({
     resolver: LOGIN_FORM_RESOLVER,
   });
@@ -20,7 +23,7 @@ export default function Login() {
       toast.error(errorText);
       return;
     }
-    toast.success("Успешно авторизовались");
+    navigation(routes.home, { replace: true });
   };
 
   return (
