@@ -1,5 +1,5 @@
 import { WidgetsTypes } from "@/entities/widget";
-import { WidgetsIds } from "@/entities/widget/widget.options";
+import { DaysTypes, WidgetsIds } from "@/entities/widget/widget.options";
 
 export default async (userId: string): Promise<WidgetsTypes[]> => {
   return new Promise((res) => {
@@ -11,6 +11,43 @@ export default async (userId: string): Promise<WidgetsTypes[]> => {
           totalHours: 20,
           planHours: 100,
           workedToday: 3,
+        },
+        {
+          typeId: WidgetsIds.DAYS,
+          name: "Рабочие дни",
+          days: [
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.SKIP,
+            DaysTypes.SKIP,
+            DaysTypes.HOLIDAY,
+            DaysTypes.HOLIDAY,
+            DaysTypes.HOLIDAY,
+            DaysTypes.HOLIDAY,
+            DaysTypes.HOLIDAY,
+            DaysTypes.SKIP,
+            DaysTypes.SKIP,
+            DaysTypes.WORKING,
+            DaysTypes.TIME_OFF,
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.WORKING,
+            DaysTypes.SKIP,
+            DaysTypes.SKIP,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+            DaysTypes.NONE,
+          ],
         },
       ]);
     }, 2000);

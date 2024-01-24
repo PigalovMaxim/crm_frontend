@@ -1,13 +1,19 @@
 import {
+  DaysWidgetType,
   WidgetsIds,
   WidgetsTypes,
-  WorkingWidget as WorkingWidgetType,
+  WorkingWidgetType,
 } from "./widget.options";
 import WorkingWidget from "./ui/workingWidget";
+import DaysWidget from "./ui/daysWidget";
 
 export default function Widget({ widget }: { widget: WidgetsTypes }) {
   if (widget.typeId === WidgetsIds.WORKING) {
     return <WorkingWidget widget={widget as WorkingWidgetType} />;
+  }
+
+  if (widget.typeId === WidgetsIds.DAYS) {
+    return <DaysWidget widget={widget as DaysWidgetType} />;
   }
 
   return (

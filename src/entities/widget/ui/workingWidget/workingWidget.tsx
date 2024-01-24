@@ -1,6 +1,6 @@
 import WidgetLayout from "../widgetLayout";
 import CircularProgress from "@/shared/circularProgress";
-import { WorkingWidget as WorkingWidgetType } from "../../widget.options";
+import { WorkingWidgetType } from "../../widget.options";
 import getHours from "../../utils/getHours";
 
 export default function WorkingWidget({
@@ -24,7 +24,7 @@ export default function WorkingWidget({
           width={30}
         />
         <h3 className="text-lg text-white">
-          Отработано {totalHours} из {planHours}
+          Отработано {totalHours} из {planHours} {getHours(planHours)}
         </h3>
         <span className="text-white text-center mt-8">
           Сегодня было отработано
