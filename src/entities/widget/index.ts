@@ -1,0 +1,1 @@
+export type { WorkingWidget, Widget, WidgetsTypes } from "./widget.options";

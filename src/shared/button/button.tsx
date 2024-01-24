@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 import _ from "lodash";
-import LoadingIcon from "./assets/loading.png";
 import classNames from "classnames";
+import Loader from "../loader";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
@@ -27,7 +27,7 @@ export default function Button(p: Props) {
       {...buttonProps}
     >
       {loading ? (
-        <img src={LoadingIcon} alt="loading" className="w-5 h-5 animate-spin" />
+        <Loader />
       ) : (
         <>{buttonProps.children}</>
       )}

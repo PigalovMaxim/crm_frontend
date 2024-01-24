@@ -29,11 +29,14 @@ export default {
         '8/10': '80%',
         '9/10': '90%',
         '10/10': '100%',
-        'gap': '20px',
+        'gap': '10px',
         'side-menu': '230px',
+        'home-widget-height': '500px',
         'side-menu-closed': '70px',
+        'min-screen-width': '1280px',
         'main-screen': 'calc(100% - 230px)',
         'main-screen-full': 'calc(100% - 70px)',
+        'content-height': 'calc(100% - 56px)',
       }
     }
   },
