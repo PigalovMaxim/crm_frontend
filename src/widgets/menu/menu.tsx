@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { MENU_ITEMS } from "./menu.options";
+import { routes } from "@/app/router";
 import { useLocation, useNavigate } from "react-router-dom";
+import { logouted } from "@/app/stores";
 
 export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
   const navigation = useNavigate();
@@ -55,6 +57,20 @@ export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
           </span>
         </button>
       ))}
+      <button
+        className={classNames(
+          "w-full hover:bg-block-highlighted transition-all py-4 text-c-red text-lg mt-auto mb-10",
+          {
+            "opacity-0": !isMenuOpen,
+          }
+        )}
+        onClick={() => {
+          logouted();
+          navigation(routes.login, { replace: true });
+        }}
+      >
+        Выйти
+      </button>
     </aside>
   );
 }

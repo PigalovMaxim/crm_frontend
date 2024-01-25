@@ -3,6 +3,7 @@ import routes from "./routes.json";
 import { Navigate } from 'react-router-dom' 
 import Login from "@/pages/login";
 import Home from "@/pages/home";
+import Tasks from "@/pages/tasks";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: routes.login,
     element: <Login />,
+  },
+  {
+    path: routes.tasks,
+    element: <Tasks />,
   },
   {
     path: routes.home,

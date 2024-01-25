@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <Header toggleMenu={toggleMenu} />
         <div className="h-content-height p-gap overflow-auto overflow-x-auto">
-          <div className="min-w-[1280px] max-w-[1920px] w-full">{children}</div>
+          <div className="h-full min-w-[1280px] max-w-[1920px] w-full">{children}</div>
         </div>
       </main>
     </div>
