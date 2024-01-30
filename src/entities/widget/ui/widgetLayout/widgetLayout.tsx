@@ -5,6 +5,7 @@ import { useState } from "react";
 import PlusIcon from "./assets/plus.png";
 import { WidgetsIds } from "../../widget.options";
 import removeWidget from "../../api/removeWidget";
+import { modalOpened } from "@/app/stores";
 
 export default function WidgetLayout({
   className,
@@ -14,9 +15,18 @@ export default function WidgetLayout({
   const [isLoading, setIsLoading] = useState(false);
 
   const onRemoveHandler = async () => {
-    setIsLoading(true);
-    await removeWidget(widgetId);
-    setIsLoading(false);
+    modalOpened({
+      title: "Вы уверены, что хотите удалить виджет?",
+      isConfirm: true,
+      onAccept: async () => {
+        setIsLoading(true);
+        await removeWidget(widgetId);
+        setIsLoading(false);
+      },
+      onDenied: () => {},
+      onAcceptTitle: "Да, удалить",
+      onDeniedTitle: "Нет, оставить",
+    });
   };
 
   return (

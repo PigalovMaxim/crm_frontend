@@ -16,6 +16,7 @@ export default function DaysWidget({ widget }: { widget: DaysWidgetType }) {
         <div className="w-full grid gap-gap grid-cols-7 mt-10">
           {days.map((day, i) => (
             <div
+              key={day + i}
               className={classNames("aspect-square flex justify-start items-start text-white px-1", {
                 "bg-c-red": day === DaysTypes.SKIP,
                 "bg-c-green": day === DaysTypes.WORKING,

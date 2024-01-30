@@ -1,9 +1,9 @@
 import { tasksSetted } from "@/app/stores/tasks";
-import { Task } from "@/entities/task";
 import { TaskStatuses } from "@/entities/task/task.options";
+import { createEffect } from "effector";
 
-export default async function getTasks(userId: string): Promise<Task[]> {
-  return new Promise(() => {
+const getTasksFx = createEffect(async (userId: string) => {
+  await new Promise((res) => {
     setTimeout(() => {
       tasksSetted([
         {
@@ -77,6 +77,10 @@ export default async function getTasks(userId: string): Promise<Task[]> {
           status: TaskStatuses.NOT_WORKED,
         },
       ]);
+      res(false)
     }, 2000);
   });
-}
+  return 
+});
+
+export default getTasksFx;

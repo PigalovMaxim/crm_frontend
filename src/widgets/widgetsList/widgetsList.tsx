@@ -2,19 +2,30 @@ import { useEffect, useState } from "react";
 import PlusIcon from "./assets/plus.png";
 import { WidgetsTypes } from "@/entities/widget";
 import Widget from "@/entities/widget/widget";
-import getWidgets from "./api/getWidgets";
+import { useUnit } from "effector-react";
+import getWidgetsFx from "./api/getWidgets";
+import Loader from "@/shared/loader";
 
 export default function WidgetsList() {
   const [widgets, setWidgets] = useState<WidgetsTypes[]>([]);
+  const isLoading = useUnit(getWidgetsFx.pending)
 
   useEffect(() => {
     const getData = async () => {
-      const _widgets = await getWidgets('test');
+      const _widgets = await getWidgetsFx('test');
       setWidgets(_widgets);
     };
 
     getData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-full flex justify-center items-center">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex flex-row flex-wrap justify-start items-start">

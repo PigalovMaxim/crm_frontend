@@ -37,7 +37,12 @@ export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
         <button
           key={item.title}
           onClick={() => onPressHandler(item.url)}
-          className="w-full px-4 h-14 hover:bg-block-highlighted transition-colors flex flex-row items-center justify-center"
+          className={classNames(
+            "w-full px-4 h-14 hover:bg-block-highlighted transition-colors flex flex-row items-center justify-center",
+            {
+              "bg-block-highlighted/60": pathname === item.url,
+            }
+          )}
         >
           <img
             src={item.icon}

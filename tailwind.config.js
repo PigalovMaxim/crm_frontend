@@ -13,6 +13,7 @@ export default {
         'c-green': '#01953F',
         'c-green-light': '#13bd5a',
         'c-red': '#e51b00',
+        'c-red-light': '#fc4a32',
         'c-red-dark': '#ad1400',
       },
       transitionProperty: {
