@@ -3,15 +3,15 @@ import { FormValues } from "../login.settings";
 
 export default async function (data: FormValues): Promise<string> {
   try {
-    if (!data.login || !data.password) throw new Error('Данные не заполнены')
+    if (!data.login || !data.password) throw new Error("Данные не заполнены");
     await new Promise((res) => {
       setTimeout(() => {
-        res(true)
-      }, 2000)
+        res(true);
+      }, 2000);
     });
-    logged({ login: 'ТестЛогин' })
-    return ''
+    logged({ login: "ТестЛогин" });
+    return "";
   } catch (e) {
-    return (e as Error).message
+    return (e as Error).message;
   }
 }

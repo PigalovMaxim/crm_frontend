@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import getTasksFx from "./api/getTasks";
 import { useList, useUnit } from "effector-react";
 import $tasks from "@/app/stores/tasks";

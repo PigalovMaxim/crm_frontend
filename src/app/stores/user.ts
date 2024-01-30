@@ -11,4 +11,4 @@ export const $user = createStore<UserType | null>(null)
   .on(logged, (_, data) => data)
   .on(logouted, () => null);
 
-persist({ store: $user, key: 'user-store' });
+persist({ store: $user, key: "user-store" });

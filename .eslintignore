@@ -1,0 +1,7 @@
+src/**/*.css
+src/main.tsx
+src/**/*.json
+src/**/*.png
+src/**/*.svg
+src/**/*.jpg
+src/**/*.jpeg

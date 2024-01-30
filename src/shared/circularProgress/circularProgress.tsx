@@ -53,7 +53,7 @@ export default function CircularProgress({
         cy={size / 2}
         r={size / 2 - width}
         strokeWidth={width}
-        stroke={color + '50'}
+        stroke={color + "50"}
       />
     </svg>
   );

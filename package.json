@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "lint": "npx eslint src/**"
   },
   "dependencies": {
     "@types/lodash": "^4.14.202",
@@ -23,7 +24,12 @@
   "devDependencies": {
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "autoprefixer": "^10.4.15",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "install": "^0.13.0",
     "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3",

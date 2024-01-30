@@ -8,11 +8,11 @@ import Loader from "@/shared/loader";
 
 export default function WidgetsList() {
   const [widgets, setWidgets] = useState<WidgetsTypes[]>([]);
-  const isLoading = useUnit(getWidgetsFx.pending)
+  const isLoading = useUnit(getWidgetsFx.pending);
 
   useEffect(() => {
     const getData = async () => {
-      const _widgets = await getWidgetsFx('test');
+      const _widgets = await getWidgetsFx("test");
       setWidgets(_widgets);
     };
 

@@ -77,10 +77,10 @@ const getTasksFx = createEffect(async (userId: string) => {
           status: TaskStatuses.NOT_WORKED,
         },
       ]);
-      res(false)
+      res(false);
     }, 2000);
   });
-  return 
+  return; 
 });
 
 export default getTasksFx;

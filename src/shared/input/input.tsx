@@ -20,8 +20,8 @@ function Input(p: Props, _: ForwardedRef<HTMLInputElement>) {
           "w-full h-10 bg-transparent border rounded-lg text-white px-4 outline-none",
           customStyles,
           {
-            'border-c-red': error,
-            'border-white': !error,
+            "border-c-red": error,
+            "border-white": !error,
           }
         )}
         {...inputProps}

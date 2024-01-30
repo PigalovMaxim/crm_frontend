@@ -5,8 +5,8 @@ export enum TaskStatuses {
 }
 
 export enum TaskTypes {
-  LIST_ITEM = 'list',
-  EXTENDED_ITEM = 'extended',
+  LIST_ITEM = "list",
+  EXTENDED_ITEM = "extended",
 }
 
 export type Task = {

@@ -1,14 +1,14 @@
 export enum WidgetsIds {
-  WORKING = 'working',
-  DAYS = 'days',
+  WORKING = "working",
+  DAYS = "days",
 }
 
 export enum DaysTypes {
-  WORKING = 'working',
-  SKIP = 'skip',
-  TIME_OFF = 'time_off',
-  HOLIDAY = 'holiday',
-  NONE = 'none',
+  WORKING = "working",
+  SKIP = "skip",
+  TIME_OFF = "time_off",
+  HOLIDAY = "holiday",
+  NONE = "none",
 }
 
 export type Widget = {
@@ -23,7 +23,7 @@ export type WorkingWidgetType = Widget & {
 };
 
 export type DaysWidgetType = Widget & {
-  days: DaysTypes[]
+  days: DaysTypes[];
 };
 
 export type WidgetsTypes = WorkingWidgetType | DaysWidgetType;
