@@ -1,1 +1,1 @@
-export type { WorkingWidget, Widget, WidgetsTypes } from "./widget.options";
+export type { WorkingWidgetType, Widget, WidgetsTypes } from "./widget.options";

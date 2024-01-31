@@ -1,20 +1,11 @@
-import { widgetSetted } from "@/app/stores";
 import { WidgetsTypes } from "@/entities/widget";
 import { DaysTypes, WidgetsIds } from "@/entities/widget/widget.options";
 import { createEffect } from "effector";
 
-const getWidgetsFx = createEffect(
-  async ({
-    userId,
-    widgetsIds,
-  }: {
-    userId: string;
-    widgetsIds: WidgetsIds[];
-  }): Promise<WidgetsTypes[]> => {
-    if (!widgetsIds) return [];
+const changeWidgetsFx = createEffect(
+  async (newWidgets: WidgetsIds[]): Promise<WidgetsTypes[]> => {
     return new Promise((res) => {
       setTimeout(() => {
-        widgetSetted([WidgetsIds.WORKING, WidgetsIds.DAYS]);
         res([
           {
             typeId: WidgetsIds.WORKING,
@@ -66,4 +57,4 @@ const getWidgetsFx = createEffect(
   }
 );
 
-export default getWidgetsFx;
+export default changeWidgetsFx;

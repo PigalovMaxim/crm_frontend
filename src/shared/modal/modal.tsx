@@ -24,8 +24,16 @@ export default function Modal() {
     onDenied?.();
     modalClosed();
   };
+  const onClose = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    //@ts-ignore
+    if (!event.target.classList.contains("pressable")) return;
+    modalClosed();
+  };
   return (
-    <div className="flex justify-center items-center w-full h-full bg-black/60 absolute top-0 left-0 z-40">
+    <div
+      onClick={onClose}
+      className="pressable flex justify-center items-center w-full h-full bg-black/60 absolute top-0 left-0 z-40"
+    >
       {children ? (
         children
       ) : (

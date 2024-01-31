@@ -1,6 +1,5 @@
-import React, { ForwardedRef } from "react";
+import React, { ForwardedRef, InputHTMLAttributes } from "react";
 import classNames from "classnames";
-import { InputHTMLAttributes } from "react";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;

@@ -6,10 +6,11 @@ import Loader from "../loader";
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
   throttleTime?: number;
+  addictionalStyles?: string;
 };
 
 export default function Button(p: Props) {
-  const { loading, throttleTime, onClick, ...buttonProps } = p;
+  const { loading, throttleTime, onClick, addictionalStyles, ...buttonProps } = p;
   const onClickHandler = _.throttle(
     (event) => onClick?.(event),
     throttleTime || 0
@@ -19,6 +20,7 @@ export default function Button(p: Props) {
     <button
       className={classNames(
         "w-full h-10 bg-c-green hover:bg-c-green-light transition-colors text-white rounded-md flex justify-center items-center",
+        addictionalStyles,
         {
           "opacity-75": loading || buttonProps.disabled,
         }

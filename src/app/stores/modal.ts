@@ -2,7 +2,7 @@ import { createEvent, createStore } from "effector";
 
 export type ModalProps = {
   children?: React.ReactNode;
-  title: string;
+  title?: string;
   subtitle?: string;
   onAcceptTitle?: string;
   onDeniedTitle?: string;
